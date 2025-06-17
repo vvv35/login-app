@@ -8,9 +8,9 @@ export default function Login() {
   const [rememberMe, setRememberMe] = useState(false);
 
   return (
-    <div className="flex min-h-screen">
-      {/* Left image */}
-      <div className="w-full relative">
+    <div className="flex flex-col md:flex-row min-h-screen">
+      {/* Left image - hidden on mobile */}
+      <div className="hidden md:block w-full relative">
         <img
           src="/Rectangle 2756.png"
           alt="login visual"
@@ -22,18 +22,17 @@ export default function Login() {
       </div>
 
       {/* Right form */}
-      <div className="w-1/2 md:w-1/2 bg-white flex flex-col justify-between p-12">
+      <div className="w-full md:w-1/2 bg-white flex flex-col p-8 md:p-12">
         <div>
-          {/* Logo */}
-          <div className="flex items-center pb-12 gap-2">
+          {/* Logo - visible en desktop */}
+            <div className="hidden md:flex items-center pb-12 gap-2">
             <img src="/Avatar-UI-Unicorn-V2.png" alt="UI Logo" className="w-7 h-7" />
             <span className="text-xl font-bold text-gray-800">UI Unicorn</span>
-          </div>
+            </div>
+
 
           {/* Heading */}
-          <div>
-            <h2 className="text-2xl font-semibold pb-6">Nice to see you again</h2>
-          </div>
+          <h2 className="text-2xl font-semibold pb-6">Nice to see you again</h2>
 
           {/* Form */}
           <form className="space-y-4">
@@ -117,22 +116,23 @@ export default function Login() {
           </button>
 
           {/* Sign up link */}
-          <p className="text-sm text-center text-gray-600 mt-4">
+          <p className="text-sm text-center text-gray-600 mt-4 my-auto">
             Don’t have an account?{" "}
             <a href="#" className="text-blue-600 hover:underline">
               Sign up now
             </a>
           </p>
         </div>
+        {/* Logo - mobile only */}
+        <div className="flex md:hidden items-center justify-center gap-2 mt-16">
+        <img src="/Avatar-UI-Unicorn-V2.png" alt="UI Logo" className="w-6 h-6" />
+        <span className="text-lg font-bold text-gray-800">UI Unicorn</span>
+        </div>
 
         {/* Footer */}
-        <div className="flex justify-between items-center text-xs text-gray-500 mt-auto">
+        <div className="flex justify-between items-center text-xs text-gray-500 mt-18 my-auto">
           <a href="#" className="flex items-center gap-2 text-blue-500">
-            <img
-              src="/Figma.png"
-              alt="icon"
-              className="w-5 h-5 rounded-full"
-            />
+            <img src="/Figma.png" alt="icon" className="w-5 h-5 rounded-full" />
             @uiunicorn
           </a>
           <p>© Perfect Login 2021</p>
